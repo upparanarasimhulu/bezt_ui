@@ -1,0 +1,27 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">Profile List</h2>
+    <a routerLink="create" class="bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block">Create Profile</a>
+    <table class="min-w-full border-collapse border border-gray-300">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border border-gray-300 px-4 py-2">ID</th>
+          <th class="border border-gray-300 px-4 py-2">User ID</th>
+          <th class="border border-gray-300 px-4 py-2">Email</th>
+          <th class="border border-gray-300 px-4 py-2">Gender</th>
+          <th class="border border-gray-300 px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let profile of profiles">
+          <td class="border border-gray-300 px-4 py-2">{{ profile.id }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ profile.userId }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ profile.email }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ profile.gender }}</td>
+          <td class="border border-gray-300 px-4 py-2">
+            <button (click)="deleteProfile(profile.id)" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
